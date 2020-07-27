@@ -30,37 +30,73 @@
 
         <!-- 生成model模型，对应的包路径，以及文件存放路径(targetProject)，targetProject可以指定具体的路径,如./src/main/java， 也可以使用“MAVEN”来自动生成，这样生成的代码会在target/generatord-source目录下 -->
         <!--<javaModelGenerator targetPackage="com.joey.mybaties.test.pojo" targetProject="MAVEN"> -->
-        <javaModelGenerator targetPackage="cn.demo.entity" targetProject="./src/main/java">
+        <javaModelGenerator targetPackage="com.demo.erp.entity" targetProject="./src/main/java">
             <property name="enableSubPackages" value="true"/>
             <!-- 从数据库返回的值被清理前后的空格 -->
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
         <!--对应的mapper.xml文件 -->
-        <sqlMapGenerator targetPackage="cn.demo.mappers" targetProject="./src/main/resources">
+        <sqlMapGenerator targetPackage="com.demo.erp.mappers" targetProject="./src/main/resources">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
 
         <!-- 对应的Mapper接口类文件 -->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="cn.demo.mappers" targetProject="./src/main/java">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.demo.erp.mappers" targetProject="./src/main/java">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
         <!-- 列出要生成代码的所有表，这里配置的是不生成Example文件 -->
-        <table tableName="sys_departments" domainObjectName="Departments" enableCountByExample="false" enableUpdateByExample="false"
+        <table tableName="DEP" domainObjectName="Dep" enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false"
                enableSelectByExample="false" selectByExampleQueryId="false"/>
-        <table tableName="sys_roles" domainObjectName="Roles" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-               enableSelectByExample="false"
-               selectByExampleQueryId="false"/>
-        <table tableName="sys_users" domainObjectName="Users" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-               enableSelectByExample="false"
-               selectByExampleQueryId="false"/>
-        <table tableName="user_role" domainObjectName="UserRole" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        <table tableName="EMP" domainObjectName="Emp" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false"
                enableSelectByExample="false" selectByExampleQueryId="false"/>
-        <table tableName="sys_menus" domainObjectName="Menus" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        <table tableName="EMP_ROLE" domainObjectName="EmpRole" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false"
                enableSelectByExample="false" selectByExampleQueryId="false"/>
-        <table tableName="role_menu" domainObjectName="RoleMenu" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        <table tableName="GOODS" domainObjectName="Goods" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false"/>
+        <table tableName="GOODS_TYPE" domainObjectName="GoodsType" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false"/>
+        <table tableName="INVENTORY" domainObjectName="Inventory" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false"/>
+        <table tableName="MENU" domainObjectName="Menu" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false"/>
+        <table tableName="ORDER_DETAIL" domainObjectName="OrderDetail" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false"/>
+        <table tableName="ORDERS" domainObjectName="Orders" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false"/>
+        <table tableName="RETURN_ORDER_DETAIL" domainObjectName="ReturnOrderDetail" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false"/>
+        <table tableName="RETURN_ORDERS" domainObjectName="ReturnOrders" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false"/>
+        <table tableName="ROLE" domainObjectName="Role" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false"/>
+        <table tableName="ROLE_MENU" domainObjectName="RoleMenu" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false"/>
+        <table tableName="STORE" domainObjectName="Store" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false"/>
+        <table tableName="STORE_DETAIL" domainObjectName="StoreDetail" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false"/>
+        <table tableName="STORE_OPER" domainObjectName="StoreOper" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false"/>
+        <table tableName="SUPPLIER" domainObjectName="Supplier" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false"
                enableSelectByExample="false" selectByExampleQueryId="false"/>
     </context>
 </generatorConfiguration>

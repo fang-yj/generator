@@ -53,6 +53,7 @@ public class CustomeCommentGenerator extends DefaultCommentGenerator {
 		for (Parameter parameter : parameterList) {
 			paramterName = parameter.getName();
 			method.addJavaDocLine(" * @param " + paramterName);
+			method.addJavaDocLine(" * @return");
 		}
 		method.addJavaDocLine(" */");
 	}
