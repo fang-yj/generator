@@ -16,7 +16,8 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * Created by fyj on 2020/7/19.
+ * @author fyj
+ * @date 2020/7/19.
  */
 public class MyPlugin extends PluginAdapter {
 	@Override
@@ -38,7 +39,7 @@ public class MyPlugin extends PluginAdapter {
 	@Override
 	public boolean modelFieldGenerated(Field field, TopLevelClass topLevelClass, IntrospectedColumn introspectedColumn, IntrospectedTable introspectedTable, ModelClassType modelClassType) {
 		if ("TIMESTAMP".equals(introspectedColumn.getJdbcTypeName())) {
-			field.addAnnotation(Annotation.DateTimeFormat.getAnnotation() + "(pattern = \"yyyy-MM-dd\")");
+			field.addAnnotation(Annotation.DateTimeFormat.getAnnotation() + "(pattern = \"yyyy-MM-dd HH:mm:ss\")");
 			topLevelClass.addImportedType(new FullyQualifiedJavaType(Annotation.DateTimeFormat.getClazz()));
 		}
 		String a = field.getType().getShortName();
